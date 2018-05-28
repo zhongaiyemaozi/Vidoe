@@ -1,2 +1,2 @@
-# Vidoe
-一款视频App，练手
+# ShortVideo
+此项目个人单纯练手

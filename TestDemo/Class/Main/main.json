@@ -1,0 +1,27 @@
+[
+ {
+ "clsName" : "CLHomeVC",
+ "title" : "首页",
+ "imageName" : "tab_home_normal",
+ "selectImageName" : "tab_home_sel"
+ },
+ {
+ "clsName" : "CLAddressVC",
+ "title" : "分类",
+ "imageName" : "tab_category_nor",
+ "selectImageName" : "tab_category_sel"
+ },
+ {
+ "clsName" : "CLFoundVC",
+ "title" : "作品",
+ "imageName" : "tab_producttion_nor",
+ "selectImageName" : "tab_producttion_sel"
+ },
+ {
+ "clsName" : "CLMineVC",
+ "title" : "个人",
+ "imageName" : "tab_personal_nor",
+ "selectImageName" : "tab_personal_sel"
+ }
+ 
+ ]
