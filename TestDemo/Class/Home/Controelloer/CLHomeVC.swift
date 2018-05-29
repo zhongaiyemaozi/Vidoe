@@ -156,10 +156,6 @@ extension CLHomeVC:FRGWaterfallCollectionViewDelegate {
     }
     
     
-    
-    
-    
-    
 }
 
 
