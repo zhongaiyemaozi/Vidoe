@@ -22,13 +22,14 @@ class CLMineTableCell: CLBaseTableViewCell {
     
     override func setupUI() {
         super.setupUI()
-        
-        titleLable = UILabel(frame: .zero)
+        //103    103    103
+        titleLable = UILabel(title: "", textColor: UIColor.cl_rgbColor(red: 103, green: 103, blue: 103), fontSize: 14, numOfLines: 1, alignment: .left)
         
         contentView.addSubview(titleLable!)
         
         titleLable?.snp.makeConstraints({ (make) in
-            make.center.equalTo(contentView)
+            make.centerY.equalTo(contentView)
+            make.left.equalTo(contentView).offset(KScaleWidth(width: 10))
         })
         
         

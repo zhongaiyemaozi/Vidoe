@@ -13,30 +13,38 @@ class CLMineTopView: CLBaseView {
     /// 用户头像
     fileprivate lazy var userImageView : UIImageView = {
         
-        let imageView = UIImageView(frame: .zero)
-        imageView.backgroundColor = UIColor.yellow
+        let imageView = UIImageView()
+        
+        var image = UIImage(named: "ic_login_qq_normal")
+        image?.cl_createCircleImage(color: UIColor.white, size: CGSize(width: KScaleHeight(height: 30), height: KScaleHeight(height: 30)), callBack: { (img) in
+            imageView.image = img
+            
+        })
+        
         return imageView
+        
     }()
     
     
     /// 用户名
     fileprivate lazy var userNameLabel : UILabel = {
-        let lable = UILabel(frame: .zero)
+        let lable = UILabel(title: "夜猫子", textColor: UIColor.white, fontSize: 15, numOfLines: 1, alignment: .left)
         
         return lable
     }()
     
     /// 用户号
     fileprivate lazy var numLable : UILabel = {
-        let numLabel = UILabel(frame: .zero)
+        //251    139    130
+        let numLabel = UILabel(title: "当前身份：个人身份", textColor: UIColor.cl_rgbColor(red: 251, green: 139, blue: 130), fontSize: 12, numOfLines: 1, alignment: .left)
         
         return numLabel
     }()
     
     /// 用户二维码
     fileprivate lazy var codeImageView : UIImageView = {
-        let codeImageView = UIImageView(frame: .zero)
-        codeImageView.backgroundColor = UIColor.cl_randomColor()
+        let codeImageView = UIImageView(imageName: "next_gray")
+        
         return codeImageView
     }()
     
@@ -44,26 +52,33 @@ class CLMineTopView: CLBaseView {
     override func setupUI() {
         super.setupUI()
         
-        addSubview(userImageView)
-        addSubview(userNameLabel)
-        addSubview(numLable)
-        addSubview(codeImageView)
+        addSubViews(subviews: [userImageView,userNameLabel,numLable,codeImageView])
         
         
+        userImageView.snp.makeConstraints { (make) in
+            make.left.equalTo(self).offset(KScaleWidth(width: 10))
+            make.top.equalTo(self).offset(KScaleHeight(height: 20))
+            make.size.equalTo(CGSize(width: KScaleHeight(height: 60), height: KScaleHeight(height: 60)));
+        }
         
+        userNameLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(userImageView.snp.right).offset(KScaleWidth(width: 10))
+            make.top.equalTo(userImageView).offset(KScaleHeight(height: 10))
+        }
         
+        numLable.snp.makeConstraints { (make) in
+            make.left.equalTo(userNameLabel)
+            make.top.equalTo(userNameLabel.snp.bottom).offset(KScaleHeight(height: 10))
+        }
+        
+        codeImageView.snp.makeConstraints { (make) in
+            make.centerY.equalTo(userImageView)
+            make.right.equalTo(self).offset(-KScaleWidth(width: 10))
+        }
         
         
     }
-    
-    
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
+
+

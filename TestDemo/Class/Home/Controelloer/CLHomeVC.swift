@@ -61,6 +61,10 @@ class CLHomeVC: CLBaseVC {
         
     }
     
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -120,7 +124,7 @@ extension CLHomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
             
             return FRGWaterfallHeaderReusableView()
         }
-    
+        
     }
     
     //返回头部视图上面的高度
@@ -137,9 +141,7 @@ extension CLHomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
     //点击
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print(indexPath)
-        
-        
+        Log.w(indexPath)
     }
     
     

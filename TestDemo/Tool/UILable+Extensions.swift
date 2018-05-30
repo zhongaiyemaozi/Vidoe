@@ -28,7 +28,8 @@ extension UILabel {
         
         self.text = title
         self.textColor = textColor
-        self.font = UIFont(name: "DINCond-Bold", size: fontSize)
+//        self.font = UIFont(name: "DINCond-Bold", size: fontSize)
+        font = UIFont.boldSystemFont(ofSize: fontSize)
         self.numberOfLines = numOfLines
         self.textAlignment = alignment
         

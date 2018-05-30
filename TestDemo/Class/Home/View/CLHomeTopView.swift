@@ -86,7 +86,6 @@ extension CLHomeTopView:LLCycleScrollViewDelegate {
     func cycleScrollView(_ cycleScrollView: LLCycleScrollView, didSelectItemIndex index: NSInteger) {
         print(index)
         
-            
         
     }
     

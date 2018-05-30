@@ -10,46 +10,46 @@ import UIKit
 
 extension UIColor {
     
-    var red: CGFloat {
-        get {
-            var red: CGFloat = 0
-            self.getRed(&red, green: nil, blue: nil, alpha: nil)
-            return red
-        }
-    }
-    
-    var green: CGFloat {
-        get {
-            var green: CGFloat = 0
-            self.getRed(nil, green: &green, blue: nil, alpha: nil)
-            return green
-        }
-    }
-    
-    var blue: CGFloat {
-        get {
-            var blue: CGFloat = 0
-            self.getRed(nil, green: nil, blue: &blue, alpha: nil)
-            return blue
-        }
-    }
-    
-    var alpha: CGFloat {
-        get {
-            var alpha: CGFloat = 0
-            self.getRed(nil, green: nil, blue: nil, alpha: &alpha)
-            return alpha
-        }
-    }
-    
-    func transition(to color: UIColor, progress: CGFloat) -> UIColor {
-        let red = self.red + (color.red - self.red) * progress
-        let green = self.green + (color.green - self.green) * progress
-        let blue = self.blue + (color.blue - self.blue) * progress
-        let alpha = self.alpha + (color.alpha - self.alpha) * progress
-        let resultColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
-        return resultColor
-    }
+//    var red: CGFloat {
+//        get {
+//            var red: CGFloat = 0
+//            self.getRed(&red, green: nil, blue: nil, alpha: nil)
+//            return red
+//        }
+//    }
+//
+//    var green: CGFloat {
+//        get {
+//            var green: CGFloat = 0
+//            self.getRed(nil, green: &green, blue: nil, alpha: nil)
+//            return green
+//        }
+//    }
+//
+//    var blue: CGFloat {
+//        get {
+//            var blue: CGFloat = 0
+//            self.getRed(nil, green: nil, blue: &blue, alpha: nil)
+//            return blue
+//        }
+//    }
+//    
+//    var alpha: CGFloat {
+//        get {
+//            var alpha: CGFloat = 0
+//            self.getRed(nil, green: nil, blue: nil, alpha: &alpha)
+//            return alpha
+//        }
+//    }
+//    
+//    func transition(to color: UIColor, progress: CGFloat) -> UIColor {
+//        let red = self.red + (color.red - self.red) * progress
+//        let green = self.green + (color.green - self.green) * progress
+//        let blue = self.blue + (color.blue - self.blue) * progress
+//        let alpha = self.alpha + (color.alpha - self.alpha) * progress
+//        let resultColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+//        return resultColor
+//    }
     
     /// 颜色的遍历构造器
     ///

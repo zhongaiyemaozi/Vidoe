@@ -34,9 +34,13 @@ class CLMineVC: CLBaseVC {
         
         let topView = CLMineTopView(frame: CGRect.init(x: 0, y: 0, width: CLSCREE_WIDYH, height: KScaleHeight(height: 100)))
         
+        topView.backgroundColor = UIColor.red
+        
         return topView
     }()
     
+    /// cell的数组数据
+    let arr = [["手机号","密码修改","账号余额","我要反馈"],["使用说明","推荐夜猫","关于我们"]]
     
     
     override func viewDidLoad() {
@@ -72,7 +76,7 @@ extension CLMineVC : UITableViewDelegate,UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        return 3;
+        return arr.count;
         
     }
     
@@ -81,11 +85,9 @@ extension CLMineVC : UITableViewDelegate,UITableViewDataSource {
         
         switch section {
         case 0:
-            return 1
-        case 1:
             return 4
-        case 2:
-            return 1
+        case 1:
+            return 3
         default: break
             
         }
@@ -99,15 +101,13 @@ extension CLMineVC : UITableViewDelegate,UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: tableViewCellIdentifier, for: indexPath) as! CLMineTableCell
         
-        let arr = [["钱包"],["收藏","相册","卡包","表情"],["设置"]]
+        
         
         switch indexPath.section {
         case 0:
             cell.titleLable?.text = arr[0][indexPath.row]
         case 1:
             cell.titleLable?.text = arr[1][indexPath.row]
-        case 2:
-            cell.titleLable?.text = arr[2][indexPath.row]
         default:
             break
         }
@@ -119,7 +119,10 @@ extension CLMineVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        navigationController?.pushViewController(UIViewController(), animated: true)
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.cl_randomColor()
+        
+        navigationController?.pushViewController(vc, animated: true)
         
         print(indexPath)
         
