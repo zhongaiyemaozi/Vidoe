@@ -24,6 +24,7 @@ PODS:
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
   - SnapKit (4.0.0)
+  - TZImagePickerController (2.1.4)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - MJRefresh
   - SDWebImage
   - SnapKit
+  - TZImagePickerController
   - YYModel
 
 SPEC REPOS:
@@ -46,6 +48,7 @@ SPEC REPOS:
     - MJRefresh
     - SDWebImage
     - SnapKit
+    - TZImagePickerController
     - YYModel
 
 SPEC CHECKSUMS:
@@ -57,8 +60,9 @@ SPEC CHECKSUMS:
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  TZImagePickerController: 2a8f41ba058e215bc9b699ade241fdbcc910c2bd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: ed0b9b83da5448b61a0bfd89536aa5028cc1acae
+PODFILE CHECKSUM: eb69eb57d52e64885df85725d7c66eb4fde1233a
 
 COCOAPODS: 1.5.0

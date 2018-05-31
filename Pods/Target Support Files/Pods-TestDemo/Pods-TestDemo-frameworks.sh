@@ -151,6 +151,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -162,6 +163,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

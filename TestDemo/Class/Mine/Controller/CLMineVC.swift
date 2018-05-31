@@ -22,6 +22,9 @@ class CLMineVC: CLBaseVC {
         
         table.rowHeight = UITableViewAutomaticDimension
         table.estimatedRowHeight = 200
+        //设置组之间的高度
+        table.sectionHeaderHeight = 0
+        table.sectionFooterHeight = KScaleHeight(height: 10)
         
         table.delegate = self
         table.dataSource = self
@@ -33,14 +36,38 @@ class CLMineVC: CLBaseVC {
     fileprivate lazy var topView : CLMineTopView = {
         
         let topView = CLMineTopView(frame: CGRect.init(x: 0, y: 0, width: CLSCREE_WIDYH, height: KScaleHeight(height: 100)))
+        //250    72    60
+        topView.backgroundColor = UIColor.cl_rgbColor(red: 250, green: 72, blue: 60)
         
-        topView.backgroundColor = UIColor.red
+        let tap = UITapGestureRecognizer(target: self, action: #selector(userButtonTaghet))
+        topView.addGestureRecognizer(tap)
         
         return topView
     }()
     
+    /// 底部视图
+    fileprivate lazy var boottonView:UIView = {
+        
+        let bootonView = UIView(frame: CGRect(x: 0, y: 0, width: CLSCREE_WIDYH, height: KScaleHeight(height: 45)))
+        
+        
+        let botonButtom = UIButton(title: "退出登录", titleColor: UIColor.black, fontSize: 15, image: nil, backImage: nil, target: self, action: #selector(exitOutLogin), event: UIControlEvents.touchUpInside)
+        botonButtom.backgroundColor = UIColor.white
+        bootonView.addSubview(botonButtom)
+        
+        botonButtom.snp.makeConstraints { (make) in
+            make.left.right.equalTo(bootonView)
+            make.top.equalTo(bootonView).offset(KScaleHeight(height: 5))
+            make.height.equalTo(KScaleHeight(height: 35))
+        }
+        
+        return bootonView
+        
+    }()
+    
+    
     /// cell的数组数据
-    let arr = [["手机号","密码修改","账号余额","我要反馈"],["使用说明","推荐夜猫","关于我们"]]
+    fileprivate let arr = [["手机号","密码修改","账号余额","我要反馈"],["使用说明","推荐夜猫","关于我们"]]
     
     
     override func viewDidLoad() {
@@ -61,7 +88,7 @@ class CLMineVC: CLBaseVC {
         }
         
         tableView.tableHeaderView = topView
-        
+        tableView.tableFooterView = boottonView
         
         
         
@@ -106,8 +133,18 @@ extension CLMineVC : UITableViewDelegate,UITableViewDataSource {
         switch indexPath.section {
         case 0:
             cell.titleLable?.text = arr[0][indexPath.row]
+            if indexPath.row == 0 {
+                cell.cellButton.setTitle("181********", for: .normal)
+                cell.cellButton.setTitle("181********", for: .highlighted)
+                cell.cellButton.setImage(UIImage(named: ""), for: .normal)
+                cell.cellButton.setImage(UIImage(named: ""), for: .highlighted)
+            }
         case 1:
             cell.titleLable?.text = arr[1][indexPath.row]
+            if indexPath.row != 0 {
+                cell.cellButton.setImage(UIImage(named: ""), for: .normal)
+                cell.cellButton.setImage(UIImage(named: ""), for: .highlighted)
+            }
         default:
             break
         }
@@ -132,8 +169,32 @@ extension CLMineVC : UITableViewDelegate,UITableViewDataSource {
     
     
     
+}
+
+
+// MARK: - 点击事件
+extension CLMineVC {
+    
+    /// 退出登录点击事件
+    @objc func exitOutLogin() {
+        
+        Log.e("点击了退出登录")
+        
+    }
+    
+    /// 个人用户的点击事件
+    @objc func userButtonTaghet() {
+        
+        
+        let userVC = CLUserInfoVC()
+        
+        navigationController?.pushViewController(userVC, animated: true)
+    }
+    
     
 }
+
+
 
 
 

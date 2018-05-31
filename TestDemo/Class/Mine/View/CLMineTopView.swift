@@ -13,13 +13,15 @@ class CLMineTopView: CLBaseView {
     /// 用户头像
     fileprivate lazy var userImageView : UIImageView = {
         
-        let imageView = UIImageView()
+        let imageView = UIImageView(imageName: "ic_login_qq_normal")
         
         var image = UIImage(named: "ic_login_qq_normal")
         image?.cl_createCircleImage(color: UIColor.white, size: CGSize(width: KScaleHeight(height: 30), height: KScaleHeight(height: 30)), callBack: { (img) in
             imageView.image = img
             
         })
+        imageView.layer.cornerRadius = KScaleHeight(height: 30)
+        imageView.layer.masksToBounds = true
         
         return imageView
         

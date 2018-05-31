@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		62F701506D6C5B5CB4C02162 /* Pods_TestDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D0C6BC8EA92F4399A82CAB /* Pods_TestDemo.framework */; };
+		82603D3620BFDA70004586CC /* CLUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82603D3520BFDA70004586CC /* CLUserInfoVC.swift */; };
+		82603D3820BFE089004586CC /* CLUserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82603D3720BFE089004586CC /* CLUserInfoCell.swift */; };
 		8278D9B820B3BBEE00163D22 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8278D9B020B3BBED00163D22 /* UIImageView+Extensions.swift */; };
 		8278D9B920B3BBEE00163D22 /* UIImage+Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8278D9B120B3BBED00163D22 /* UIImage+Draw.swift */; };
 		8278D9BA20B3BBEE00163D22 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8278D9B220B3BBED00163D22 /* Date+Extension.swift */; };
@@ -65,6 +67,8 @@
 
 /* Begin PBXFileReference section */
 		26D0C6BC8EA92F4399A82CAB /* Pods_TestDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82603D3520BFDA70004586CC /* CLUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLUserInfoVC.swift; sourceTree = "<group>"; };
+		82603D3720BFE089004586CC /* CLUserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLUserInfoCell.swift; sourceTree = "<group>"; };
 		8278D9A920B3B48800163D22 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8278D9AB20B3B49E00163D22 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8278D9AE20B3B7B600163D22 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -358,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				82DBB3C220B50B24000BA147 /* CLMineVC.swift */,
+				82603D3520BFDA70004586CC /* CLUserInfoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -367,6 +372,7 @@
 			children = (
 				82DBB3C420B50B24000BA147 /* CLMineTopView.swift */,
 				82DBB3C520B50B24000BA147 /* CLMineTableCell.swift */,
+				82603D3720BFE089004586CC /* CLUserInfoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -541,6 +548,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +603,7 @@
 				82BFB6AE20B2800B009384A6 /* CLBaseView.swift in Sources */,
 				82E430E520BBA9A100470423 /* CLCollectionView.swift in Sources */,
 				8278D9B920B3BBEE00163D22 /* UIImage+Draw.swift in Sources */,
+				82603D3820BFE089004586CC /* CLUserInfoCell.swift in Sources */,
 				82DBB3C920B50B24000BA147 /* CLMineTableCell.swift in Sources */,
 				82DBB3D220B50BD0000BA147 /* CLAddressModel.swift in Sources */,
 				82E430DF20BBA2D500470423 /* Array+Extension.swift in Sources */,
@@ -609,6 +618,7 @@
 				8278D9C520B3C0D800163D22 /* CLTableView.swift in Sources */,
 				82BFB6BA20B2B80D009384A6 /* CLBaseTableViewCell.swift in Sources */,
 				8278D9BC20B3BBEE00163D22 /* UIColor+Extensions.swift in Sources */,
+				82603D3620BFDA70004586CC /* CLUserInfoVC.swift in Sources */,
 				82DBB3D820B54AE5000BA147 /* CLHomeTopView.swift in Sources */,
 				82E430D320BB9E2C00470423 /* CLLocation+YCLocation.m in Sources */,
 				82E430D920BBA1E300470423 /* String+Extension.swift in Sources */,

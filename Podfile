@@ -14,5 +14,6 @@ target 'TestDemo' do
     pod 'SDWebImage'
     pod 'CHTCollectionViewWaterfallLayout/Swift'    #瀑布流
     pod 'LLCycleScrollView'                         #轮播图
+    pod'TZImagePickerController'                    #照片选择器
     
 end
