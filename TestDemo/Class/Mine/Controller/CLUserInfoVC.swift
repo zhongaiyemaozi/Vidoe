@@ -30,6 +30,8 @@ class CLUserInfoVC: CLBaseVC {
         table.delegate = self
         table.dataSource = self
         
+        
+        
         return table
     }()
     
@@ -39,8 +41,12 @@ class CLUserInfoVC: CLBaseVC {
         let topView = UIView(frame: CGRect.init(x: 0, y: 0, width: CLSCREE_WIDYH, height: KScaleHeight(height: 150)))
         
         topView.backgroundColor = UIColor.white
+        topView.addSubview(imageButton)
         
-        
+        imageButton.snp.makeConstraints { (make) in
+            make.center.equalTo(topView)
+            make.size.equalTo(CGSize(width: KScaleHeight(height: 60), height: KScaleHeight(height: 60)))
+        }
         
         return topView
     }()
@@ -48,13 +54,28 @@ class CLUserInfoVC: CLBaseVC {
     /// 图片选择器
     fileprivate lazy var imagePickerVC:TZImagePickerController = {
         
-        let vc = TZImagePickerController.init(maxImagesCount: 1, delegate: self as! TZImagePickerControllerDelegate)
-        
+        let vc = TZImagePickerController.init(maxImagesCount: 1, delegate: self as TZImagePickerControllerDelegate)
+        vc?.allowPreview = true
+        vc?.showSelectBtn = false
+        vc?.allowTakePicture = true
+        vc?.allowTakeVideo = false
+        vc?.allowPickingImage = true
+        vc?.sortAscendingByModificationDate = false
         
         return vc!
     }()
     
-    fileprivate let cellArr = [["昵称","夜猫子"],["名字",""],["年龄","16"],["身份切换","个人身份"]]
+    lazy var imageButton:UIButton = {
+        let btn = UIButton(title: "", titleColor: UIColor.clear, fontSize: 0, image: "", backImage: "ic_login_qq_normal", target: self, action: #selector(userImageButtom(btn:)), event: UIControlEvents.touchUpInside)
+        
+        btn.layer.cornerRadius = KScaleHeight(height: 30)
+        btn.layer.masksToBounds = true
+        
+        return btn
+    }()
+    
+    
+    fileprivate var cellArr = [["昵称","夜猫子"],["名字",""],["年龄","16"],["身份切换","个人身份"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,16 +137,47 @@ extension CLUserInfoVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = UIViewController()
-        vc.view.backgroundColor = UIColor.cl_randomColor()
+        switch indexPath.row {
+        case 0:
+            
+            let alertController = UIAlertController(title: "请输入昵称", message: nil, preferredStyle: .alert)
+            alertController.addTextField { (textField:UITextField) in
+                textField.placeholder = "请输入昵称"
+                textField.text = self.cellArr[indexPath.section][indexPath.row + 1]
+            }
+            
+            let sureAction = UIAlertAction(title: "确定", style: .destructive) { (_) in
+                self.cellArr[indexPath.section][indexPath.row + 1] = (alertController.textFields?.last?.text)!
+                tableView.reloadData()
+            }
+            
+            let cancerAction = UIAlertAction(title: "取消", style: .cancel) { (_) in
+                
+            }
+            
+            alertController.addAction(sureAction)
+            alertController.addAction(cancerAction)
+            present(alertController, animated: true, completion: nil)
+            
+        case 1: break
+        case 2: break
+            
+            
+            
+            
+        case 3: break
+        default:
+            break
+        }
         
-        navigationController?.pushViewController(vc, animated: true)
         
-        print(indexPath)
+        
+        
+        
         
     }
     
-  
+    
     
     
     
@@ -133,9 +185,42 @@ extension CLUserInfoVC : UITableViewDelegate,UITableViewDataSource {
 }
 
 
+// MARK: - 点击事件
+extension CLUserInfoVC {
+    
+    /// 点击头像的点击事件
+    ///
+    /// - Parameter btn: <#btn description#>
+    @objc func userImageButtom(btn:UIButton) {
+        
+        print("点击了头像")
+        //跳转到照片选择器
+        present(imagePickerVC, animated: true, completion: nil)
+        
+    }
+    
+    
+}
 
 
-
+// MARK: - TZImagePickerControllerDelegate
+extension CLUserInfoVC:TZImagePickerControllerDelegate {
+    
+    
+    //获取选中的图片数组
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+        print("图片：\(photos)")
+        imageButton.setImage(photos.last, for: .normal)
+        imageButton.setImage(photos.last, for: .highlighted)
+    }
+    
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool, infos: [[AnyHashable : Any]]!) {
+        
+        
+        
+    }
+    
+}
 
 
 
