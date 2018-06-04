@@ -137,7 +137,7 @@ extension CLUserInfoVC : UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             
             let alertController = UIAlertController(title: "请输入昵称", message: nil, preferredStyle: .alert)
@@ -159,13 +159,31 @@ extension CLUserInfoVC : UITableViewDelegate,UITableViewDataSource {
             alertController.addAction(cancerAction)
             present(alertController, animated: true, completion: nil)
             
-        case 1: break
-        case 2: break
+            
+        case 1:
+            
+            CLPRAlert.showAlert1(self, title: "这是一个弹窗", message: "是的是的", alertTitle: "确定", style: .default) {
+                
+                print("点击了名字")
+            }
+            
+        case 2:
+            
+            CLPRAlert.showAlert1(self, title: "这是一个弹窗", message: "是的是的", alertTitle: "确定", style: .default) {
+                
+                print("点击了年龄")
+            }
             
             
             
             
-        case 3: break
+        case 3:
+            
+            CLPRAlert.showAlert1(self, title: "这是一个弹窗", message: "是的是的", alertTitle: "确定", style: .default) {
+                
+                print("点击了身份切换")
+            }
+            
         default:
             break
         }
