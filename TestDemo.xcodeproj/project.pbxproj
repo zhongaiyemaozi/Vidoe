@@ -63,6 +63,7 @@
 		82E430E120BBA42900470423 /* CLLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E430E020BBA42900470423 /* CLLog.swift */; };
 		82E430E320BBA5F500470423 /* UIImage+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E430E220BBA5F500470423 /* UIImage+Extention.swift */; };
 		82E430E520BBA9A100470423 /* CLCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E430E420BBA9A100470423 /* CLCollectionView.swift */; };
+		82EB898620C6653D0029CF54 /* CLMineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EB898520C6653D0029CF54 /* CLMineModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +134,7 @@
 		82E430E020BBA42900470423 /* CLLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLog.swift; sourceTree = "<group>"; };
 		82E430E220BBA5F500470423 /* UIImage+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extention.swift"; sourceTree = "<group>"; };
 		82E430E420BBA9A100470423 /* CLCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLCollectionView.swift; sourceTree = "<group>"; };
+		82EB898520C6653D0029CF54 /* CLMineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLMineModel.swift; sourceTree = "<group>"; };
 		9DC74A78562FD38F3AC4FEB4 /* Pods-TestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo/Pods-TestDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A657CC7F1F59A19EA466FA1A /* Pods-TestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestDemo/Pods-TestDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -380,6 +382,7 @@
 		82DBB3C620B50B24000BA147 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82EB898520C6653D0029CF54 /* CLMineModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				82DBB3D820B54AE5000BA147 /* CLHomeTopView.swift in Sources */,
 				82E430D320BB9E2C00470423 /* CLLocation+YCLocation.m in Sources */,
 				82E430D920BBA1E300470423 /* String+Extension.swift in Sources */,
+				82EB898620C6653D0029CF54 /* CLMineModel.swift in Sources */,
 				82E430E120BBA42900470423 /* CLLog.swift in Sources */,
 				82DBB3D420B545EC000BA147 /* CLHomeTempLatesListCell.swift in Sources */,
 				82E430E320BBA5F500470423 /* UIImage+Extention.swift in Sources */,
@@ -780,7 +784,10 @@
 				DEVELOPMENT_TEAM = 45TYBN3W5C;
 				INFOPLIST_FILE = TestDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LongShengQuan.yu.TestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestDemo/TestDemo-Bridging-Header.h";
@@ -798,7 +805,10 @@
 				DEVELOPMENT_TEAM = 45TYBN3W5C;
 				INFOPLIST_FILE = TestDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LongShengQuan.yu.TestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TestDemo/TestDemo-Bridging-Header.h";

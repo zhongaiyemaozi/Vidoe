@@ -22,6 +22,7 @@ class CLMineVC: CLBaseVC {
         
         table.rowHeight = UITableViewAutomaticDimension
         table.estimatedRowHeight = 200
+        
         //设置组之间的高度
         table.sectionHeaderHeight = 0
         table.sectionFooterHeight = KScaleHeight(height: 10)
