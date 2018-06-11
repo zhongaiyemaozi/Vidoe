@@ -30,8 +30,6 @@ class CLUserInfoVC: CLBaseVC {
         table.delegate = self
         table.dataSource = self
         
-        
-        
         return table
     }()
     
@@ -65,6 +63,7 @@ class CLUserInfoVC: CLBaseVC {
         return vc!
     }()
     
+    /// 头部视图中头像按钮
     lazy var imageButton:UIButton = {
         let btn = UIButton(title: "", titleColor: UIColor.clear, fontSize: 0, image: "", backImage: "ic_login_qq_normal", target: self, action: #selector(userImageButtom(btn:)), event: UIControlEvents.touchUpInside)
         
@@ -75,6 +74,7 @@ class CLUserInfoVC: CLBaseVC {
     }()
     
     
+    /// 数据源
     fileprivate var cellArr = [["昵称","夜猫子"],["名字",""],["年龄","16"],["身份切换","个人身份"]]
     
     override func viewDidLoad() {
@@ -208,10 +208,9 @@ extension CLUserInfoVC {
     
     /// 点击头像的点击事件
     ///
-    /// - Parameter btn: <#btn description#>
+    /// - Parameter btn: 按钮
     @objc func userImageButtom(btn:UIButton) {
         
-        print("点击了头像")
         //跳转到照片选择器
         present(imagePickerVC, animated: true, completion: nil)
         
@@ -227,7 +226,7 @@ extension CLUserInfoVC:TZImagePickerControllerDelegate {
     
     //获取选中的图片数组
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
-        print("图片：\(photos)")
+        Log.w("图片：\(photos)")
         imageButton.setImage(photos.last, for: .normal)
         imageButton.setImage(photos.last, for: .highlighted)
     }

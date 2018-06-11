@@ -74,8 +74,7 @@ class CLMineVC: CLBaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        navigationController?.navigationBar.barTintColor = topView.backgroundColor
     }
     
     

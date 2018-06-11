@@ -10,4 +10,11 @@ import UIKit
 
 class CLMineModel: CLBaseModel {
     
+    let name:String? = nil
+    
+    let userID:String? = nil
+    
+    
+    
+    
 }
