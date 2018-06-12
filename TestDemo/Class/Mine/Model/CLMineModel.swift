@@ -17,4 +17,5 @@ class CLMineModel: CLBaseModel {
     
     
     
+    
 }

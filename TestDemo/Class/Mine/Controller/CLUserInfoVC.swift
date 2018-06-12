@@ -79,15 +79,30 @@ class CLUserInfoVC: CLBaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setNavigationBar()
         // Do any additional setup after loading the view.
     }
     
     
+    /// 设置navgation
+    fileprivate func setNavigationBar() {
+        
+        navigationController?.navigationBar.shadowImage = UIImage()
+        title = "个人资料"
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationItem.largeTitleDisplayMode = .automatic
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        
+    }
+    
     override func setupUI() {
         super.setupUI()
         
-        title = "个人资料"
+        
         
         view.addSubview(tableView)
         
