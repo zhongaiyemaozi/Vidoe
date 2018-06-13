@@ -14,6 +14,7 @@ class CLMineModel: CLBaseModel {
     
     let userID:String? = nil
     
+    let userVip:String? = nil
     
     
     
