@@ -23,35 +23,35 @@ class Log: NSObject,NSCoding {
     /// - parameter log: log content string
     public class func v(_ log: Any?, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
         let info = formatInfo(fileName: fileName, function: function, lineNumber: lineNumber)
-        self.addLog(log, info: info, level: Log.Level.verbose)
+        addLog(log, info: info, level: Log.Level.verbose)
     }
     /// Print debug log (blue)
     ///
     /// - parameter log: log content string
     public class func d(_ log: Any?, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
         let info = formatInfo(fileName: fileName, function: function, lineNumber: lineNumber)
-        self.addLog(log, info: info, level: Log.Level.debug)
+        addLog(log, info: info, level: Log.Level.debug)
     }
     /// Print info log (green)
     ///
     /// - parameter log: log content string
     public class func i(_ log: Any?, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
         let info = formatInfo(fileName: fileName, function: function, lineNumber: lineNumber)
-        self.addLog(log, info: info, level: Log.Level.info)
+        addLog(log, info: info, level: Log.Level.info)
     }
     /// Print warning log (yellow)
     ///
     /// - parameter log: log content string
     public class func w(_ log: Any?, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
         let info = formatInfo(fileName: fileName, function: function, lineNumber: lineNumber)
-        self.addLog(log, info: info, level: Log.Level.warning)
+        addLog(log, info: info, level: Log.Level.warning)
     }
     /// Print error log (red)
     ///
     /// - parameter log: log content string
     public class func e(_ log: Any?, fileName: String = #file, function: String = #function, lineNumber: Int = #line) {
         let info = formatInfo(fileName: fileName, function: function, lineNumber: lineNumber)
-        self.addLog(log, info: info, level: Log.Level.error)
+        addLog(log, info: info, level: Log.Level.error)
     }
     
     /// Emoji mark of verbose logs, default is ✉️

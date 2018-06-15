@@ -31,7 +31,7 @@ extension UIImageView {
         let url = URL(string: urlStr)
         let pImage = UIImage(named: placeHoder)
         if let url = url, let pImage = pImage {
-            self.sd_setImage(with: url, placeholderImage: pImage)
+            sd_setImage(with: url, placeholderImage: pImage)
         }
         
     }
@@ -44,7 +44,7 @@ extension UIImageView {
     func cl_setImage(urlStr: String) {
         let url = URL(string: urlStr)
         if let url = url {
-            self.sd_setImage(with: url)
+            sd_setImage(with: url)
         }
     }
     

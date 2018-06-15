@@ -30,14 +30,14 @@ class CLTableView: UITableView {
         if refreshType == .PullDown {
             self.pullDownBack = pullDownBack
             let header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(pullDownBackAction))
-            self.mj_header = header
-            if firstRefresh {self.mj_header.beginRefreshing()}
-            self.mj_header.isAutomaticallyChangeAlpha = true //自动改变透明度
+            mj_header = header
+            if firstRefresh {mj_header.beginRefreshing()}
+            mj_header.isAutomaticallyChangeAlpha = true //自动改变透明度
             header?.lastUpdatedTimeLabel.isHidden = timeLabHidden//头部的菊花是否隐藏
             header?.stateLabel.isHidden = stateLabHidden//状态文本是不是隐藏
         }else if refreshType == .PullUp{ //只允许上拉
             self.pullUpBack = pullUpBack
-            self.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(pullUpBackAction))
+            mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(pullUpBackAction))
         }else{
             self.pullDownBack = pullDownBack
             self.pullUpBack = pullUpBack
@@ -45,9 +45,9 @@ class CLTableView: UITableView {
             header?.lastUpdatedTimeLabel.isHidden = timeLabHidden
             header?.stateLabel.isHidden = stateLabHidden
             self.mj_header = header
-            if firstRefresh {self.mj_header.beginRefreshing()}
-            self.mj_header.isAutomaticallyChangeAlpha = true
-            self.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(pullUpBackAction))
+            if firstRefresh {mj_header.beginRefreshing()}
+            mj_header.isAutomaticallyChangeAlpha = true
+            mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(pullUpBackAction))
             
         }
     }

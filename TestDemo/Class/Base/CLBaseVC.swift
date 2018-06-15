@@ -35,7 +35,6 @@ class CLBaseVC: UIViewController,UIGestureRecognizerDelegate {
         let backIten:UIBarButtonItem = UIBarButtonItem()
         backIten.title = ""
         navigationItem.backBarButtonItem = backIten
-//        navigationController?.navigationBar.barStyle = .default
         
 //        //使用navigationLeftItem会导致页面侧滑手势失效,需要加上后面两句代码,并且遵循UIGestureRecognizerDelegate协议
 //        self.navigationController?.interactivePopGestureRecognizer?.delegate = self

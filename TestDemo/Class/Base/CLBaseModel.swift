@@ -10,4 +10,11 @@ import UIKit
 
 class CLBaseModel: NSObject {
     
+    
+    
+    
+    
+    
+    
+    
 }

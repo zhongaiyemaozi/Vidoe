@@ -18,8 +18,8 @@ extension CLLocationCoordinate2D {
         let a = 6378245.0
         let ee = 0.00669342162296594323
         
-        var dLat = self.transformLatitudeFromEarthToMars()
-        var dLon = self.transformLongitudeFromEarthToMars()
+        var dLat = transformLatitudeFromEarthToMars()
+        var dLon = transformLongitudeFromEarthToMars()
         let radLat = self.latitude / 180.0 * Double.pi;
         var magic = sin(radLat);
         magic = 1 - ee * magic * magic;

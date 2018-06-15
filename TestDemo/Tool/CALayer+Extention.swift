@@ -12,25 +12,25 @@ extension CALayer {
     
     var shadowUIColor: UIColor? {
         get {
-            if let cgColor = self.shadowColor {
+            if let cgColor = shadowColor {
                 return UIColor(cgColor: cgColor)
             }
             return nil
         }
         set {
-            self.shadowColor = newValue?.cgColor
+            shadowColor = newValue?.cgColor
         }
     }
     
     var borderUIColor: UIColor? {
         get {
-            if let cgColor = self.borderColor {
+            if let cgColor = borderColor {
                 return UIColor(cgColor: cgColor)
             }
             return nil
         }
         set {
-            self.borderColor = newValue?.cgColor
+            borderColor = newValue?.cgColor
         }
     }
 }

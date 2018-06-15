@@ -21,13 +21,13 @@ extension String {
     
     var length: Int {
         get {
-            return self.count
+            return count
         }
     }
     
     var firstPinyinLetter: String {
         get {
-            return self.toPinyin().substring(to: 1)
+            return toPinyin().substring(to: 1)
         }
     }
     
@@ -63,15 +63,15 @@ extension String {
     }
     
     func substring(from: Int) -> String {
-        return self.substring(from: from, length: self.length - from)
+        return substring(from: from, length: self.length - from)
     }
     
     func substring(to: Int) -> String {
-        return self.substring(from: 0, length: to)
+        return substring(from: 0, length: to)
     }
     
     func substring(with range: NSRange) -> String {
-        return self.substring(from: range.location, length: range.length)
+        return substring(from: range.location, length: range.length)
     }
     
     func substring(from: Int, length: Int) -> String {
